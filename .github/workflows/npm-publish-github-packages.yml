@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - name: Setup SSH agent
+        run: |
+          eval "$(ssh-agent -s)"
+          echo "$VPS_HOUSE_SSH" | tr -d '\r' | ssh-add -
+        env:
+          VPS_HOUSE_SSH: ${{ secrets.VPS_HOUSE_SSH }}
       - name : SSh remote
         uses: appleboy/ssh-action@v1.0.0
         with:
