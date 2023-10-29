@@ -23,7 +23,7 @@ jobs:
             node-version: 16
       - run: npm i
       - name: CD
-        run : echo 'CD ongoing'
+        run : echo 'CD on going'
       - name: Ssh 
         uses: appleboy/ssh-action@master
         with:
@@ -38,6 +38,5 @@ jobs:
            source ~/.nvm/nvm.sh
            echo "DATABASE_URL=\"${{secrets.DATABASE_URL_PROD}}\"" > .env
            echo "PORT=3000" >> .env
-           ls -a
            npm install
            npm run
