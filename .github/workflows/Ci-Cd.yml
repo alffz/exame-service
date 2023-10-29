@@ -39,4 +39,5 @@ jobs:
            echo "DATABASE_URL=\"${{secrets.DATABASE_URL_PROD}}\"" > .env
            echo "PORT=3000" >> .env
            npm install
-           npm run start
+           npx prisma migrate dev
+           npm run start &
