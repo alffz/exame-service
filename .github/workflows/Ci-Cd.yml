@@ -39,4 +39,4 @@ jobs:
            echo "DATABASE_URL=\"${{secrets.DATABASE_URL_PROD}}\"" > .env
            echo "PORT=3000" >> .env
            npm install
-           npm run
+           npm run start
