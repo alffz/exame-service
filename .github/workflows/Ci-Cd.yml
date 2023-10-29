@@ -37,7 +37,7 @@ jobs:
            export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didin install node in /usr/local/bin/
            source ~/.nvm/nvm.sh
            echo "DATABASE_URL="${{secrets.DATABASE_URL_PROD}}"" > .env
-           echo "PORT=3000" > .env
+           echo "PORT=3000" >> .env
            ls -a
            npm install
            npm run
