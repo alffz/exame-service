@@ -34,10 +34,10 @@ jobs:
          script: |
            cd /var/apps/exame-service
            git pull origin main
-           export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didin install node in /usr/local/bin/
+           export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didn install node in /usr/local/bin/
            source ~/.nvm/nvm.sh
            echo "DATABASE_URL=\"${{secrets.DATABASE_URL_PROD}}\"" > .env
            echo "PORT=3000" >> .env
            npm install
            npx prisma migrate dev
-           npm run start & exit
+           pm2 start src/main.js --name exame-service
