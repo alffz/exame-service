@@ -40,4 +40,4 @@ jobs:
            echo "PORT=3000" >> .env
            npm install
            npx prisma migrate dev
-           npm run start &
+           npm run start & exit
