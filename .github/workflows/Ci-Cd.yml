@@ -34,6 +34,6 @@ jobs:
          script: |
            cd /var/apps/exame-service
            git pull origin main
-           ls
+           node -v
            npm install
            npm run
