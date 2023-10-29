@@ -31,7 +31,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOUSE_IP }}
           username: ${{ secrets.VPS_HOUSE_USERNAME }}
-          key: ${{ secrets.VPS_HOUSE_SSH }}
+          key: ${{ secrets.LOCAL_SSH_PRIVATE }}
           script: |
             cd /var/app/exame-service
             npm i

@@ -166,7 +166,7 @@ const submit = async ({ id, request }) => {
     const questionId = curr.id; // 1
     const correctAnswer = curr.answer; // a
 
-    const questionChoices = { ...curr.choice }; // {} {} {}{}
+    const questionChoices = { ...curr.choice }; // {}{}{}{}
     // a === a
     if (request[questionId] === correctAnswer) {
       questionChoices[request[questionId]] = {

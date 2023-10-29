@@ -61,10 +61,11 @@ let correctAnswersCount = 0;
 
 // Iterate through the questions array and compare the answers with answare.
 questions.forEach((question) => {
-  const questionId = question.id;
-  const correctAnswer = question.answer;
+  const questionId = question.id; // 1,2,3,4
+  const correctAnswer = question.answer; // a,b,c,d
 
   if (ids[questionId] === correctAnswer) {
+    // a === a
     correctAnswersCount++;
   }
 });
