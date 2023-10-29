@@ -2,7 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 # actually we can combine ci and cd together but in this case i create respectfly
 
-name: CI
+name: CI CD
 
 on:
   push:
@@ -34,8 +34,10 @@ jobs:
          script: |
            cd /var/apps/exame-service
            git pull origin main
-           export NVM_DIR=~/.nvm
+           export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didin install node in /usr/local/bin/
            source ~/.nvm/nvm.sh
            node -v
            npm install
            npm run
+        env :
+          DATABASE_URL: "mysql://root:password@127.0.0.1:3306/exame?schema=public"
