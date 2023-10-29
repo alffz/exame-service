@@ -36,8 +36,7 @@ jobs:
            git pull origin main
            export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didin install node in /usr/local/bin/
            source ~/.nvm/nvm.sh
-           echo "${{secrets.DATABASE_URL_PROD}}" > .env
-           touch text.env
+           echo "${{secrets.DATABASE_URL_PROD}}" > text.env
            ls
            npm install
            npm run
