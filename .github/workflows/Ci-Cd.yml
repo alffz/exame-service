@@ -31,7 +31,7 @@ jobs:
          username: ${{ secrets.VPS_HOUSE_USERNAME }}
          key: ${{ secrets.RMW_PRIVATE }} # so this is privatekey of local computer, and add public key to server
          port: 22
-         script: |
+         run: |
            cd /var/apps/exame-service
            git pull origin main
            export NVM_DIR=~/.nvm # because node installed using nvm , and nvm didin install node in /usr/local/bin/
