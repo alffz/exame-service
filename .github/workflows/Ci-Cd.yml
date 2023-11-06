@@ -40,4 +40,4 @@ jobs:
            echo "PORT=3000" >> .env
            npm install
            npx prisma migrate dev
-           pm2 start src/main.js --name exame-service
+           pm2 restart src/main.js --name exame-service
