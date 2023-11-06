@@ -8,12 +8,14 @@ export const createSchema = joi.object({
     .items(
       joi.object({
         question: joi.string().required(),
-        choice: joi.object({
-          a: joi.string().required(),
-          b: joi.string().required(),
-          c: joi.string().required(),
-          d: joi.string().required(),
-        }),
+        choice: joi // TODO fix choice validation not work
+          .object({
+            a: joi.any().required(),
+            b: joi.any().required(),
+            c: joi.any().required(),
+            d: joi.any().required(),
+          })
+          .required(),
         answer: joi.string().required(),
       })
     ),
