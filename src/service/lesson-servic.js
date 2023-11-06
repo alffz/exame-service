@@ -58,7 +58,8 @@ const update = async ({ id, request }) => {
   };
 
   // handle unique name
-  // 1. if name is do not changed
+  // 1. if name  not chang
+  console.log(lesson.name, request.name);
   if (lesson.name === request.name) {
     return prismaClient.lesson.update({
       where: {
@@ -136,7 +137,13 @@ const getById = async ({ id, exame }) => {
   }
 
   if (!exame) {
-    return data;
+    return {
+      id: data.id,
+      name: data.name,
+      questions: data.questions.map(({ question, choice, answer }) => {
+        return { question, choice, answer };
+      }),
+    };
   } else {
     return {
       id: data.id,
@@ -166,7 +173,7 @@ const submit = async ({ id, request }) => {
     const questionId = curr.id; // 1
     const correctAnswer = curr.answer; // a
 
-    const questionChoices = { ...curr.choice }; // {}{}{}{}
+    const questionChoices = { ...curr.choice }; //
     // a === a
     if (request[questionId] === correctAnswer) {
       questionChoices[request[questionId]] = {
