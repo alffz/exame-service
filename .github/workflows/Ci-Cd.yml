@@ -38,5 +38,6 @@ jobs:
            source ~/.nvm/nvm.sh
            echo "DATABASE_URL=\"${{secrets.DATABASE_URL_PROD}}\"" > .env
            echo "PORT=3000" >> .env
+           rm -r node_modules
            npm install
            npx prisma migrate dev
